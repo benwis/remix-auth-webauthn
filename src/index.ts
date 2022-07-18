@@ -9,7 +9,7 @@ import {
  * This interface declares what configuration the strategy needs from the
  * developer to correctly work.
  */
-export interface MyStrategyOptions {
+export interface WebauthnOptions {
   something: "You may need";
 }
 
@@ -17,16 +17,16 @@ export interface MyStrategyOptions {
  * This interface declares what the developer will receive from the strategy
  * to verify the user identity in their system.
  */
-export interface MyStrategyVerifyParams {
+export interface WebauthnVerifyParams {
   something: "Dev may need";
 }
 
-export class MyStrategy<User> extends Strategy<User, MyStrategyVerifyParams> {
-  name = "change-me";
+export class WebauthnStrategy<User> extends Strategy<User, WebauthnVerifyParams> {
+  name = "webauthn";
 
   constructor(
-    options: MyStrategyOptions,
-    verify: StrategyVerifyCallback<User, MyStrategyVerifyParams>
+    options: WebauthnOptions,
+    verify: StrategyVerifyCallback<User, WebauthnVerifyParams>
   ) {
     super(verify);
     // do something with the options here
